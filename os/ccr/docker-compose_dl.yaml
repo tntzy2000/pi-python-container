@@ -1,0 +1,38 @@
+version: '3.9'
+services:
+  dev:
+    build: ./dl
+    volumes:
+      - main_vol:/app
+      - data_vol:/app/data
+    stdin_open: true  
+    tty: true
+    user: henrydev:henrydev 
+    ports:
+      - 8891:8890
+    networks:
+      - inner
+    command: >
+      /bin/bash -c "
+      . activate dev_env && jupyter lab --ip=* --port=8890 --no-browser --allow-root --notebook-dir=/app
+      " 
+
+volumes:
+  main_vol:
+    driver: vieux/sshfs:latest
+    driver_opts:
+      sshcmd: ab245@localhost:/home/ab245/projects/ccr
+      allow_other: ""
+  
+  data_vol:
+    driver: vieux/sshfs:latest
+    driver_opts:
+      sshcmd: ab245@localhost:/data/ab245/ccr
+      allow_other: ""
+
+networks:
+  inner:
+    driver: bridge
+    ipam:
+      config: 
+        - subnet: 173.0.0.0/24

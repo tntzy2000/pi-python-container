@@ -1,0 +1,163 @@
+name: dev_env
+channels:
+  - conda-forge
+  - pyviz
+dependencies:
+  - python=3.10
+
+  # map
+  # - geopandas # not yet tested
+  # - cartopy # need also install in jupyterlab env
+  # - geoviews
+  # - utm
+  # - esmpy=7.1.0 # lead to conflicts 
+  # - xesmf
+
+ # visualize
+  # - plotly
+  # - altair
+  # - vega
+  # - vega_datasets
+  - matplotlib
+  - bokeh
+  - seaborn
+  - ipympl
+  # - hvplot
+  # (to solve the problem of panel 0.12.4
+  # 2021-10-8
+  
+  # - channels
+  # )
+  # - panel
+  # - dfviz
+  # - xrviz
+  - holoviz # require xarray < 0.12. The current version is 0.14 2020-1-31
+  # for exporting pic from bokeh, seems not working
+  # - firefox
+  # - geckodriver
+  # - selenium
+
+  # data manipulation
+  - pandas
+  # - pandas-profiling
+  - pytables
+  - numpy
+  - scipy
+  - scikit-learn
+  # - dask
+  # - dask_labextension
+  # - qgrid
+  # - sqlalchemy
+  # - gpy
+  # - pydot
+  # - streamz
+  # - python-graphviz
+  # - intake
+  # - pandas-datareader
+  # - simpy
+
+  # ML
+  # - tensorflow-gpu=2.2
+  # - cudatoolkit
+  # - tensorflow=2.3
+  # - hyperopt
+  # - tensorflow-probability=0.11
+
+  # code analysis tools
+  - line_profiler
+
+  # excel
+  - openpyxl
+  - xlrd
+
+  # lint
+  - pylint
+  - autopep8
+  - rope
+
+  # internet
+  - requests
+  # - beautifulsoup4
+  # - scrapy
+  # - lxml
+  # - html5lib
+
+  # web site
+  # - flask
+  # - flask-sqlalchemy
+  # - jinja2
+  # - django
+  # - django-debug-toolbar
+  # - uwsgi
+
+  # weather
+  # - cdsapi
+  # - cython
+  # - cfgrib # conflicts with holoviz on xarray 2020-1-31
+
+  # system
+  - dill
+  - ipykernel
+  - jupyterlab
+  - jupyterlab-git
+  - nodejs
+  - pip
+  # - tzlocal
+  # - watchdog[watchmedo]
+  # - wget
+
+  # test
+  - pytest
+  - pytest-xdist
+
+  # debug
+  # - ptvsd
+  - xeus-python
+
+  # language
+  # - xeus-cling
+  # - xwidgets
+
+  # spacevim
+  # - yapf
+
+  - pip:
+  #   - wget
+  #   # - pydot-ng
+
+  #   # weather
+  #   - netcdf4
+  #   - ecmwf-api-client
+
+    # jupyter lab extension
+    - nbdime
+    # - jupyterlab-git
+    - jupyterlab_vim
+    - jupyterlab-code-snippets
+    # - jupyterlab-snippets
+    - pyviz_comms
+    # - dask-labextension
+    # - voila
+    # - voila-gridstack
+
+  #   # debug
+  #   - pysnooper
+
+  #   # web site
+  #   - uwsgitop
+
+  #   # convert japanese code 
+  #   - mojimoji
+
+  #   # ML
+  #   - ray[tune]
+
+  #   # to solve the confilces 2021-10-20
+  #   - bokeh==2.4
+
+  #   # gpflow 
+  #   - tensorflow-gpu==2.3
+    
+  #   - gpflow
+  #   #- tensorflow-probability==0.11
+  #   # - gpflow

@@ -1,0 +1,19 @@
+name: dev_env
+channels:
+  - conda-forge
+  - pyviz
+dependencies:
+  - python=3.10
+
+  # data manipulation
+  - pandas
+  # - pandas-profiling
+  - pytables
+  - numpy
+  - scipy
+  - scikit-learn
+
+  # lint
+  - pylint
+  - autopep8
+  - rope
